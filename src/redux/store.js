@@ -14,11 +14,10 @@ const initialState = {
 export const STEP_ONE = 'STEP_ONE'
 export const STEP_TWO = 'STEP_TWO'
 export const STEP_THREE = 'STEP_THREE'
-export const CLEAR_STORE = 'CLEAR_STORE'
 
 function reducer(state = initialState, action) {
-  const { type, payload } = action
   const { property, address, city, zip, img, mortgage, rent } = payload
+  const { type, payload } = action
   switch (type) {
     case STEP_ONE:
       return {
@@ -39,17 +38,6 @@ function reducer(state = initialState, action) {
         ...state,
         mortgage: mortgage,
         rent: rent
-      }
-    case CLEAR_STORE:
-      return {
-        property: '',
-        address: '',
-        city: '',
-        state: '',
-        zip: '',
-        img: '',
-        mortgage: '',
-        rent: ''
       }
     default:
       return state;
