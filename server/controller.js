@@ -17,7 +17,7 @@ const addHouse = (req, res, next) => {
   const dbI = req.app.get('db')
   const { property, address, city, state, zip } = req.body
   dbI
-    .addHouse([ property, address, city, state, zip ])
+    .addHouse([ property, address, city, state, zip, img, mortgage, rent ])
     .then( house => {
       res.status(200).json(house)
     })

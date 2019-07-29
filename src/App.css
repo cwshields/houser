@@ -26,7 +26,17 @@ button {
 
 .btn1 {
   font-size: 18px;
-  background-color: #8aea92;
+  background-color: #7edf86;
+}
+
+.btn2 {
+  font-size: 18px;
+  background-color: #74c47b;
+}
+
+.btn3 {
+  font-size: 18px;
+  background-color: #7edf86;
 }
 
 input {
@@ -58,7 +68,10 @@ input {
 
 .wizard {
   display: flex;
-  justify-content: center
+  flex-direction: column;
+  margin-left: 100px;
+  width: 220px;
+  height: 300px;
 }
 
 .comp-container {

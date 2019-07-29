@@ -30,13 +30,10 @@ export default class Dashboard extends Component {
         <div className='comp-container'>
           <div className='component-header'>
             <h2 className='comp-name'>Dashboard</h2>
-            <Link to='/wizard'>
-              <div className='flex middle'><button className='btn1'>Add New Property</button></div>
-            </Link>
+            <Link to='/wizard/1' className='flex middle'><button className='btn1'>Add New Property</button></Link>
           </div>
           <div className='container'>
-            <div className='sub-name'>Housing List</div>
-            
+            <div className='sub-name'>Housing List:</div>
             {this.state.houses.map( () => (
               <House />
             ))}

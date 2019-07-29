@@ -1,37 +1,13 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom';
+import { Route, Switch, Link } from 'react-router-dom'
 import axios from 'axios';
+import StepOne from './StepOne';
+import StepTwo from './StepTwo';
+import StepThree from './StepThree';
 
 export default class Dashboard extends Component {
-  constructor() {
-    super()
-    this.state = {
-      property: '',
-      address: '',
-      city: '',
-      state: '',
-      zip: '',
-    }
-    this.handleInputChange = this.handleInputChange.bind(this)
-  }
-
-  handleInputChange(e) {
-    const { name, value } = e.target
-    this.setState({ [name]: value })
-    console.log(value)
-  }
-
-  addHouse = () => {
-    const { property, address, city, state, zip } = this.state;
-    axios
-      .post('/api/house/', { property, address, city, state, zip })
-      .then(res => this.setState({ houses: res.data }))
-      .catch((err) => console.log(err));
-  }
 
   render() {
-    const { property, address, city, state, zip } = this.state;
-    const { handleInputChange } = this;
     return (
       <div className='component'>
         <div className='comp-container'>
@@ -41,13 +17,11 @@ export default class Dashboard extends Component {
               <div className='comp-btn'><button>Cancel</button></div>
             </Link>
           </div>
-          <div className='wizard'>
-            
-          </div>
-          <div className='flex space'>
-            <button>Previous</button>
-            <button>Next Step</button>
-          </div>
+          <Switch>
+            <Route path="/wizard/1" component={StepOne} />
+            <Route path="/wizard/2" component={StepTwo} />
+            <Route path="/wizard/3" component={StepThree} />
+          </Switch>
         </div>
       </div>
     );
