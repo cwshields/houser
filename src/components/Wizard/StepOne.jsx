@@ -61,7 +61,7 @@ class StepOne extends Component {
           </div>
           <div className='flex space'>
             <div></div>
-            <Link to='/wizard/2'><button>Next Step</button></Link>
+            <Link to='/wizard/2'><button onClick={this.handleNext}>Next Step</button></Link>
           </div>
         </div>
       </div>

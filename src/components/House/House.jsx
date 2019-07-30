@@ -5,15 +5,15 @@ const House = (props) => {
     <div className='house-card'>
       <img className='card-img' src={props.house.img} alt="house"/>
       <div className='card-group1'>
-        <div className=''>Property Name: {props.house.property}</div>
-        <div className=''>Address: {props.house.address}</div>
-        <div className=''>City: {props.house.city}</div>
-        <div className=''>State: {props.house.state}</div>
-        <div className=''>Zip: {props.house.zip}</div>
+        <div className=''>Property Name: <span className='bold'>{props.house.property}</span></div>
+        <div className=''>Address: <span className='bold'>{props.house.address}</span></div>
+        <div className=''>City: <span className='bold'>{props.house.city}</span></div>
+        <div className=''>State: <span className='bold'>{props.house.state}</span></div>
+        <div className=''>Zip: <span className='bold'>{props.house.zip}</span></div>
       </div>
       <div className='card-group2'>
-        <div className=''>Monthly Mortgage: {props.house.mortgage}</div>
-        <div className=''>Desired Rent: {props.house.rent}</div>
+        <div className=''>Monthly Mortgage: <span className='bold'>{props.house.mortgage}</span></div>
+        <div className=''>Desired Rent: <span className='bold'>{props.house.rent}</span></div>
       </div>
       <button className='dlt-btn' onClick={ () => props.deleteHouse(props.house.id)}>X</button>
     </div>

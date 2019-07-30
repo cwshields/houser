@@ -6,6 +6,8 @@ const app = express()
 const { getList, deleteHouse, addHouse } = require('./controller')
 const { CONNECTION_STRING, SERVER_PORT } = process.env
 
+app.use(express.json())
+
 massive(CONNECTION_STRING).then(db => {
   app.set('db', db)
   console.log('DATABASE CONNECTED')

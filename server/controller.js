@@ -14,6 +14,7 @@ const getList = (req, res, next) => {
 const addHouse = (req, res, next) => {
   const dbI = req.app.get('db')
   const { property, address, city, state, zip, img, mortgage, rent } = req.body
+  console.log(property)
   dbI
     .addHouse([ property, address, city, state, zip, img, mortgage, rent ])
     .then( house => {

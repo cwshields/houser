@@ -23,11 +23,18 @@ class StepThree extends Component {
     })
   }
 
+  handleClick = () => {
+    store.dispatch({
+      type: STEP_THREE,
+      payload: this.state
+    })
+  }
+
   submit = () => {
     const reduxState = store.getState()
     const { mortgage, rent } = this.state
     const { property, address, city, state, zip, img } = reduxState;
-    const { newHouse } = { property, address, city, state, zip, img, mortgage, rent }
+    const newHouse = { property, address, city, state, zip, img, mortgage, rent }
     axios
       .post('/api/house/', newHouse)
       .then(this.props.history.push('/'))
@@ -35,18 +42,12 @@ class StepThree extends Component {
     store.dispatch({
       type: CLEAR_STORE
     })
+    this.handleClick()
   }
 
   handleChange = (e) => {
     const { name, value } = e.target
     this.setState({ [name]: value })
-  }
-
-  handleClick = () => {
-    store.dispatch({
-      type: STEP_THREE,
-      payload: this.state
-    })
   }
 
   render() {
@@ -56,11 +57,11 @@ class StepThree extends Component {
           <div>Recommended Rent: $0</div>
           <div>
             <div>Mothly Mortgage Amount:</div>
-            <input type="text" className='input-3' />
+            <input onChange={this.handleChange} name='mortgage' type="text" className='input-3' />
           </div>
           <div>
             <div>Desired Monthly Rent:</div>
-            <input type="text" className='input-3' />
+            <input onChange={this.handleChange} name='rent' type="text" className='input-3' />
           </div>
         </div>
         <div className='flex space'>

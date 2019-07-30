@@ -36,9 +36,9 @@ export default class Dashboard extends Component {
           </div>
           <div className='container'>
             <div className='sub-name'>Housing List:</div>
-            {this.state.houses.length === 0 ?
-              <h3 className=''>No houses in list...</h3> :
-              this.state.houses.map( (house, index) => (
+            {this.state.houses.length === 0 
+              ? <h3 className=''>No houses in list...</h3> 
+              : this.state.houses.map( (house, index) => (
                 <House deleteHouse={this.deleteHouse} key={index} house={house} />
             ))}
           </div>
