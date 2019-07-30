@@ -3,9 +3,31 @@ html {
 }
 
 nav {
+  display: flex;
+  justify-content: center;
+  background-color: #5ead83;
+  z-index: 10;
   height: 90px;
-  background-color: #519872;
-  z-index: 10
+}
+
+.nav-container {
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  width: 850px;
+}
+
+.houser-logo {
+  height: 28px;
+  width: 34px;
+  margin-right: 8px; 
+}
+
+.houser {
+  font-size: 26px;
+  font-weight: 700;
 }
 
 body {
@@ -86,7 +108,7 @@ input {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  width: 752px;
+  width: 800px;
   height: 90px;
 }
 

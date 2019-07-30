@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import axios from 'axios'
 import store, { STEP_THREE, CLEAR_STORE } from '../../redux/store';
+import axios from 'axios'
 
 class StepThree extends Component {
   constructor() {
@@ -18,7 +18,7 @@ class StepThree extends Component {
     store.subscribe( () => {
       this.setState({
         mortgage: reduxState.mortgage,
-      rent: reduxState.rent
+        rent: reduxState.rent
       })
     })
   }

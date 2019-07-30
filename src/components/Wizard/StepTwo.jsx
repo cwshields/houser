@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
-import store, { STEP_TWO } from '../../redux/store'
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import store, { STEP_TWO } from '../../redux/store';
 
 class StepTwo extends Component {
   constructor() {
@@ -12,8 +12,8 @@ class StepTwo extends Component {
   }
   
   componentDidMount() {
+    const reduxState = store.getState()
     store.subscribe( () => {
-      const reduxState = store.getState()
       this.setState({
         img: reduxState.img
       })
@@ -38,11 +38,11 @@ class StepTwo extends Component {
         <div className='comp-container'>
           <div className='wizard'>
             <div>Image URL:</div>
-            <input value={this.state.img} onChange={this.handleChange} name='img' className='input-2' type="text" />
+            <input value={this.state.img} name='img' onChange={this.handleChange} className='input-2' type="text" />
           </div>
           <div className='flex space'>
-            <Link to='/wizard/1'><button onClick={this.handleNext}>Previous Step</button></Link>
-            <Link to='/wizard/3'><button onClick={this.handleNext}>Next Step</button></Link>
+            <Link to='/wizard/1'><button onClick={this.handleClick}>Previous Step</button></Link>
+            <Link to='/wizard/3'><button onClick={this.handleClick}>Next Step</button></Link>
           </div>
         </div>
       </div>
