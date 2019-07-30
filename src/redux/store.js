@@ -14,30 +14,41 @@ const initialState = {
 export const STEP_ONE = 'STEP_ONE'
 export const STEP_TWO = 'STEP_TWO'
 export const STEP_THREE = 'STEP_THREE'
+export const CLEAR_STORE = 'CLEAR_STORE'
 
 function reducer(state = initialState, action) {
-  const { property, address, city, zip, img, mortgage, rent } = payload
   const { type, payload } = action
   switch (type) {
     case STEP_ONE:
       return {
         ...state,
-        property: property,
-        address: address,
-        city: city,
-        state: state,
-        zip: zip
+        property: payload.property,
+        address: payload.address,
+        city: payload.city,
+        state: payload.state,
+        zip: payload.zip
       }
     case STEP_TWO:
       return {
         ...state,
-        img: img
+        img: payload.img
       }
     case STEP_THREE:
       return {
         ...state,
-        mortgage: mortgage,
-        rent: rent
+        mortgage: payload.mortgage,
+        rent: payload.rent
+      }
+    case CLEAR_STORE:
+      return {
+        property: '',
+        address: '',
+        city: '',
+        state: '',
+        zip: '',
+        img: '',
+        mortgage: '',
+        rent: ''
       }
     default:
       return state;

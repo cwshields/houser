@@ -10,6 +10,7 @@ nav {
 
 body {
   background-color: #afd4c0;
+  line-height: 25px;
 }
 
 h2 {
@@ -21,6 +22,9 @@ button {
   font-weight: 600;
   padding: 8px 14px;
   border: none;
+}
+
+a {
   text-decoration: none;
 }
 
@@ -39,21 +43,41 @@ button {
   background-color: #7edf86;
 }
 
+.dlt-btn {
+  position: absolute;
+  right: 10px;
+  background: none;
+  height: 30px;
+  margin: -6px -8px 0 0;
+}
+
 input {
   padding: 4px;
   margin: 2px;
+}
+
+.input-1 {
+  width: 220px;
+}
+
+.input-2 {
+  width: 450px;
+}
+
+.input-3 {
+  width: 200px;
 }
 
 .component-wrap {
   display: flex;
   justify-content: center;
   background-color: #afd4c0;
-  height: 89vh;
+  min-height: 89vh;
 }
 
 .component {
-  height: 89vh;
-  width: 800px;
+  min-height: 89.4vh;
+  width: 850px;
   background-color: #e5f4ec;
 }
 
@@ -100,7 +124,26 @@ input {
 }
 
 .house-card {
-  height: 150px;
+  position: relative;
+  display: flex;
+  background-color: #DEDEDE;
+  margin-bottom: 12px;
+  padding: 12px;
+  height: 130px;
+}
+
+.card-img {
+  width: 235px;
+  margin-right: 12px;
+}
+
+.card-group1 {
+  width: 278px;
+  margin-right: 10px;
+}
+
+.card-group2 {
+  width: 242px;
 }
 
 .flex {
@@ -112,7 +155,7 @@ input {
 }
 
 .space {
-  justify-content: space-between
+  justify-content: space-between;
 }
 
 .middle {

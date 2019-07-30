@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { Route, Switch, Link } from 'react-router-dom'
-import axios from 'axios';
 import StepOne from './StepOne';
 import StepTwo from './StepTwo';
 import StepThree from './StepThree';
