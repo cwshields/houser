@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import store, { STEP_ONE } from '../../redux/store';
 
-class StepOne extends Component {
+class StepOne extends Component { 
   constructor() {
     super()
     const reduxState = store.getState();
